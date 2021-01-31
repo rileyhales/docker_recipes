@@ -1,0 +1,12 @@
+version: "1"
+
+services:
+  thredds:
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    ports:
+      - 8090:80
+    volumes:
+#      - MOUNT THE FLASK APP CODE
+      - :/app/GSP_API
