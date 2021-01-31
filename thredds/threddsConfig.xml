@@ -83,14 +83,14 @@
    The elements below represent defaults. Only the <enabled> tag is required
    to enable CORS. The default allowed origin is '*', which allows sharing
    to any domain.
+  -->
   <CORS>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <maxAge>1728000</maxAge>
     <allowedMethods>GET</allowedMethods>
     <allowedHeaders>Authorization</allowedHeaders>
     <allowedOrigin>*</allowedOrigin>
   </CORS>
-  -->
 
   <!--
    The <CatalogServices> element:
@@ -200,14 +200,13 @@
   </WCS>
   -->
 
-  <!--
   <WMS>
-    <allow>false</allow>
-    <allowRemote>false</allowRemote>
+    <allow>true</allow>
+    <allowRemote>true</allowRemote>
+    <paletteLocationDir>/WEB-INF/palettes</paletteLocationDir>
     <maxImageWidth>2048</maxImageWidth>
     <maxImageHeight>2048</maxImageHeight>
   </WMS>
-  -->
 
   <!--
   <NCISO>

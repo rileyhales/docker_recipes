@@ -1,12 +1,22 @@
-version: "1"
+# the docker-compose version, not the script/container version
+version: '3.7'
 
 services:
-  thredds:
+  thredds-production:
+    container_name: thredds
+    image: unidata/thredds-docker:latest
     build:
       context: ""
       dockerfile: Dockerfile
     ports:
-      - 8090:80
+      - 7000:8080
     volumes:
-#      - MOUNT THE FLASK APP CODE
-      - :/app/GSP_API
+      - Directory containing the spatial datasets
+      - /Users/rchales/spatialdata:/usr/local/tomcat/content/thredds/public/data
+
+#      - Directory containing the WMS color scheme palettes
+#      - /path/to/directory/of/palettes:/usr/local/tomcat/webapps/thredds/WEB-INF/palettes
+
+#      - Logs
+#      - /path/to/your/tomcat/logs/:/usr/local/tomcat/logs/
+#      - /path/to/your/thredds/logs/:/usr/local/tomcat/content/thredds/logs/
